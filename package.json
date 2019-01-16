@@ -2,7 +2,6 @@
   "name": "chartsapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mateuszkalinowski.github.io/ChartsApp",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "jquery": "^3.3.1",
