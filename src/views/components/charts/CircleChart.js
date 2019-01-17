@@ -19,7 +19,16 @@ export default function CircleChart(props) {
     return (
         <React.Fragment>
             <PieChart width={760} height={500}>
-                <Pie isAnimationActive={true} data={data} cx={370} cy={250} outerRadius={200} fill={props.color} dataKey="value" label={renderCustomizedLabel} />
+                <Pie
+                    isAnimationActive={true}
+                    data={data}
+                    cx={370}
+                    cy={250}
+                    outerRadius={200}
+                    fill={props.color}
+                    dataKey="value"
+                    label={renderCustomizedLabel}
+                />
             </PieChart>
 
         </React.Fragment>
