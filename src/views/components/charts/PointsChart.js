@@ -8,8 +8,6 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  Line,
-  LineChart
 } from "recharts";
 
 export default function PointsChart(props) {

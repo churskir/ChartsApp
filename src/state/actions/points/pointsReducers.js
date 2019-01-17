@@ -2,7 +2,6 @@ import {
     ADD_XY_POINT,
     REMOVE_XY_POINT,
     EDIT_XY_POINT,
-    REMOVE_ALL_NAMEANDVALUE_POINT,
     REMOVE_ALL_XY_POINTS
 } from "../../types";
 

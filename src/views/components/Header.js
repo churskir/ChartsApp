@@ -24,7 +24,6 @@ import uuid from "uuid";
 
 class Header extends Component {
 
-
     csvXYFileAdded = (data) => {
 
         this.props.removeAllXYPoints();
@@ -72,6 +71,8 @@ class Header extends Component {
 
     }
 
+    
+
     render() {
         let csvXYData = [];
         this.props.xypoints.points.forEach(point => {
@@ -96,6 +97,7 @@ class Header extends Component {
                         <a className="navbar-brand" href="/">
                             ChartsApp
                         </a>
+
                         <button
                             className="navbar-toggler"
                             type="button"
@@ -107,6 +109,7 @@ class Header extends Component {
                         >
                             <span className="navbar-toggler-icon" />
                         </button>
+
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item dropdown">
@@ -116,11 +119,17 @@ class Header extends Component {
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <CSVLink data={csvXYData} filename={"numericData.csv"}
-                                            className="dropdown-item text-dark">Pobierz dane liczbowe jako plik
-                                            CSV</CSVLink>
-                                        <CSVLink data={csvNameValueData} filename={"textData.csv"}
-                                            className="dropdown-item text-dark">Pobierz dane tekstowe jako plik
-                                            CSV</CSVLink>
+                                            className="dropdown-item text-dark"
+                                        >
+                                            Pobierz dane liczbowe jako plik CSV
+                                        </CSVLink>
+                                        <CSVLink
+                                            data={csvNameValueData}
+                                            filename={"textData.csv"}
+                                            className="dropdown-item text-dark"
+                                        >
+                                            Pobierz dane tekstowe jako plik CSV
+                                        </CSVLink>
                                         <div className="dropdown-divider"></div>
                                         <CSVReader
                                             cssClass="csv-reader-input dropdown-item text-dark"

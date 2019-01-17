@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { CirclePicker, GithubPicker, SketchPicker, ChromePicker } from 'react-color';
+import { CirclePicker } from 'react-color';
 
 import {
     addPoint,
@@ -92,7 +91,7 @@ class MainPage extends Component {
                 {this.props.selections.helpVisible &&
                     <div className="row mt-2">
                         <div className="col-sm-6 center">
-                            <span className="text-muted">Wykresy liczbowe to wykres punktowy i liniowy.</span>
+                            <span className="text-muted">Wykresy liczbowe to wykres punktowy i liniowy</span>
                         </div>
                         <div className="col-sm-6 center">
                             <span className="text-muted">Wykresy tekstowe to wykresy kolumnowe (horyzontalne i wertykalne
@@ -122,11 +121,21 @@ class MainPage extends Component {
                                 <div className="chartArea">
                                     {
                                         this.state.NumbersChartType === "Punktowy" && (
-                                            <PointsChart points={this.props.xypoints} color={this.state.hexColor} xLabel={this.props.selections.xLabel} yLabel={this.props.selections.yLabel} />
+                                            <PointsChart
+                                                points={this.props.xypoints}
+                                                color={this.state.hexColor}
+                                                xLabel={this.props.selections.xLabel}
+                                                yLabel={this.props.selections.yLabel}
+                                            />
                                         )
                                     }
                                     {this.state.NumbersChartType === "Liniowy" && (
-                                        <LinesChart points={this.props.xypoints} color={this.state.hexColor} xLabel={this.props.selections.xLabel} yLabel={this.props.selections.yLabel} />
+                                        <LinesChart
+                                            points={this.props.xypoints}
+                                            color={this.state.hexColor}
+                                            xLabel={this.props.selections.xLabel}
+                                            yLabel={this.props.selections.yLabel}
+                                        />
                                     )
                                     }
                                 </div>
@@ -158,12 +167,22 @@ class MainPage extends Component {
                                 <div className="chartArea">
                                     {
                                         this.state.TextChartType === "KolumnowyHoryzontalny" && (
-                                            <HorizontalBarChart points={this.props.nvpoints} color={this.state.hexColor} nameLabel={this.props.selections.nameLabel} valueLabel={this.props.selections.valueLabel} />
+                                            <HorizontalBarChart
+                                                points={this.props.nvpoints}
+                                                color={this.state.hexColor}
+                                                nameLabel={this.props.selections.nameLabel}
+                                                valueLabel={this.props.selections.valueLabel}
+                                            />
                                         )
                                     }
                                     {
                                         this.state.TextChartType === "KolumnowyWertykalny" && (
-                                            <VerticalBarChart points={this.props.nvpoints} color={this.state.hexColor} nameLabel={this.props.selections.nameLabel} valueLabel={this.props.selections.valueLabel} />
+                                            <VerticalBarChart
+                                                points={this.props.nvpoints}
+                                                color={this.state.hexColor}
+                                                nameLabel={this.props.selections.nameLabel}
+                                                valueLabel={this.props.selections.valueLabel}
+                                            />
                                         )
                                     }
                                     {
@@ -215,7 +234,9 @@ class MainPage extends Component {
                         {this.props.selections.helpVisible &&
                             <div className="row mt-2">
                                 <div className="col-sm-12 mx-auto">
-                                    <span className="text-muted">Wybrany tutaj kolor będzie ustawiony dla wszystkich typów wykresów</span>
+                                    <span className="text-muted">
+                                        Wybrany tutaj kolor będzie ustawiony dla wszystkich typów wykresów
+                                    </span>
                                 </div>
                             </div>
                         }

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import store from './store';
-import Routes from './Routes.js';
 
 import { Provider } from "react-redux";
+
+import MainPage from "./views/pages/MainPage"
+import Header from "./views/components/Header"
 
 import "./App.css";
 
@@ -12,7 +14,12 @@ class App extends Component {
     return (
       <div className="App">
         <Provider store={store}>
-          <Routes />
+          <React.Fragment>
+            <div className="app">
+              <Header />
+              <MainPage />
+            </div>
+          </React.Fragment>
         </Provider>
       </div>
     );

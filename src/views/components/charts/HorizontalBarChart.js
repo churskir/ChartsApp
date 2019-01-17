@@ -1,15 +1,11 @@
 import React from "react";
 
 import {
-    ScatterChart,
-    Scatter,
     XAxis,
     YAxis,
     CartesianGrid,
     Tooltip,
     Legend,
-    Line,
-    LineChart,
     BarChart,
     Bar,
     ReferenceLine

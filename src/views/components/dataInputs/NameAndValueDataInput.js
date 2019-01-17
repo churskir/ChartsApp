@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import {
@@ -19,7 +18,6 @@ import uuid from "uuid";
 import $ from "jquery";
 
 import "./NameAndValueDataInput.css";
-import { CSVLink } from "react-csv";
 
 class NameAndValueDataInput extends Component {
     constructor(props) {
@@ -56,11 +54,6 @@ class NameAndValueDataInput extends Component {
                 });
                 return;
             }
-
-            let xValues = Object.values(this.props.points.points).filter(point => {
-                return point.x === newRecord.x;
-            });
-
 
             this.props.addPoint(newRecord);
             this.setState({
