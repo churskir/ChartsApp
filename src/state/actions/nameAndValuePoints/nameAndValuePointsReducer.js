@@ -1,4 +1,4 @@
-import {ADD_NAMEANDVALUE_POINT, REMOVE_NAMEANDVALUE_POINT, EDIT_NAMEANDVALUE_POINT, REMOVE_ALL_NAMEANDVALUE_POINT} from "../../types";
+import { ADD_NAMEANDVALUE_POINT, REMOVE_NAMEANDVALUE_POINT, EDIT_NAMEANDVALUE_POINT, REMOVE_ALL_NAMEANDVALUE_POINT } from "../../types";
 
 const initialState = {
     points: {
@@ -11,9 +11,6 @@ export default function (state = initialState, action) {
         case ADD_NAMEANDVALUE_POINT:
             let points = state.points.points;
             points.push(action.payload);
-            // points.sort(function(a,b) {
-            //     return a.x - b.x;
-            // })
             return {
                 ...state,
                 points: {

@@ -19,7 +19,7 @@ export const removePoint = (id) => dispatch => {
     })
 };
 
-export const editPoint = (id,newX,newY) => dispatch => {
+export const editPoint = (id, newX, newY) => dispatch => {
     dispatch({
         type: EDIT_NAMEANDVALUE_POINT,
         payload: {

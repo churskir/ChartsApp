@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from './views/components/Header';
 
 import MainPage from "./views/pages/MainPage"
@@ -13,13 +13,13 @@ export default class Routes extends Component {
         <React.Fragment>
           <Router>
             <div className="app">
-              <Header/>
+              <Header />
               <Switch>
-                <Route component={MainPage}/>
+                <Route component={MainPage} />
               </Switch>
             </div>
-            </Router>  
-        </React.Fragment>        
+          </Router>
+        </React.Fragment>
       </div>
     )
   }

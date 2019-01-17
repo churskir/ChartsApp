@@ -1,4 +1,4 @@
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 
 import XandYPointsReducer from "./actions/points/pointsReducers";
 import NameAndValueReducer from "./actions/nameAndValuePoints/nameAndValuePointsReducer";

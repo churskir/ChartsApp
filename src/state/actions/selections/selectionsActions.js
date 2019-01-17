@@ -1,4 +1,4 @@
-import {SET_SELECTED_CHARTS_FAMILY, SET_X_LABEL, SET_Y_LABEL, SET_NAME_LABEL, SET_VALUE_LABEL, SET_HELP_VISIBLE} from '../../types';
+import { SET_SELECTED_CHARTS_FAMILY, SET_X_LABEL, SET_Y_LABEL, SET_NAME_LABEL, SET_VALUE_LABEL, SET_HELP_VISIBLE } from '../../types';
 
 export const setSelectedChartsFamily = (family) => dispatch => {
     dispatch({

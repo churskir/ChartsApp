@@ -1,6 +1,6 @@
-import React, {Component} from "react";
-import {CSVLink} from "react-csv";
-import {connect} from "react-redux";
+import React, { Component } from "react";
+import { CSVLink } from "react-csv";
+import { connect } from "react-redux";
 import CSVReader from 'react-csv-reader'
 
 import {
@@ -105,21 +105,21 @@ class Header extends Component {
                             aria-expanded="false"
                             aria-label="Toggle navigation"
                         >
-                            <span className="navbar-toggler-icon"/>
+                            <span className="navbar-toggler-icon" />
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink"
-                                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Plik
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <CSVLink data={csvXYData} filename={"numericData.csv"}
-                                                 className="dropdown-item text-dark">Pobierz dane liczbowe jako plik
+                                            className="dropdown-item text-dark">Pobierz dane liczbowe jako plik
                                             CSV</CSVLink>
                                         <CSVLink data={csvNameValueData} filename={"textData.csv"}
-                                                 className="dropdown-item text-dark">Pobierz dane tekstowe jako plik
+                                            className="dropdown-item text-dark">Pobierz dane tekstowe jako plik
                                             CSV</CSVLink>
                                         <div className="dropdown-divider"></div>
                                         <CSVReader
@@ -128,7 +128,7 @@ class Header extends Component {
                                             onFileLoaded={this.csvXYFileAdded}
                                             onError={this.handleDarkSideForce}
                                             inputId="csvNewData"
-                                            inputStyle={{color: 'black'}}
+                                            inputStyle={{ color: 'black' }}
                                         />
                                         <CSVReader
                                             cssClass="csv-reader-input dropdown-item text-dark"
@@ -136,53 +136,53 @@ class Header extends Component {
                                             onFileLoaded={this.csvNameValueFileAdded}
                                             onError={this.handleDarkSideForce}
                                             inputId="csvNewData"
-                                            inputStyle={{color: 'black'}}
+                                            inputStyle={{ color: 'black' }}
                                         />
                                     </div>
                                 </li>
 
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle active" href="#" id="editNavbarMenuLink"
-                                       role="button"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Edycja
                                     </a>
                                     <div className="dropdown-menu" aria-labelledby="editNavbarMenuLink">
                                         <a className="dropdown-item" href="#"
-                                           onClick={() => {
-                                               this.props.removeAllXYPoints();
-                                           }}
+                                            onClick={() => {
+                                                this.props.removeAllXYPoints();
+                                            }}
                                         >Usuń wszystkie dane liczbowe</a>
                                         <a className="dropdown-item" href="#"
-                                           onClick={() => {
-                                               this.props.removeAllNameAndValuePoints();
-                                           }}
+                                            onClick={() => {
+                                                this.props.removeAllNameAndValuePoints();
+                                            }}
                                         >Usuń wszystkie dane tekstowe</a>
                                     </div>
                                 </li>
                                 {this.props.selections.helpVisible === false &&
-                                <li className="nav-item active">
-                                <a className="nav-link" href="#"
-                                onClick={() => {
-                                this.props.setHelpVisible(true);
-                                }
-                                }
-                                >
-                                    Pokaż pomoc
+                                    <li className="nav-item active">
+                                        <a className="nav-link" href="#"
+                                            onClick={() => {
+                                                this.props.setHelpVisible(true);
+                                            }
+                                            }
+                                        >
+                                            Pokaż pomoc
                                 </a>
-                                </li>
+                                    </li>
                                 }
                                 {this.props.selections.helpVisible === true &&
-                                <li className="nav-item active">
-                                    <a className="nav-link" href="#"
-                                    onClick={() => {
-                                    this.props.setHelpVisible(false);
-                                    }
-                                    }
-                                    >
-                                        Ukryj pomoc
+                                    <li className="nav-item active">
+                                        <a className="nav-link" href="#"
+                                            onClick={() => {
+                                                this.props.setHelpVisible(false);
+                                            }
+                                            }
+                                        >
+                                            Ukryj pomoc
                                     </a>
-                                </li>
+                                    </li>
                                 }
                             </ul>
                         </div>

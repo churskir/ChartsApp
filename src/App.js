@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Provider store={store}>
-          <Routes/>
+          <Routes />
         </Provider>
       </div>
     );

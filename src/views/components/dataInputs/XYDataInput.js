@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 import {
     addPoint,
@@ -40,7 +40,7 @@ class XYDataInput extends Component {
         };
     }
 
-    onChange = e => this.setState({[e.target.name]: e.target.value});
+    onChange = e => this.setState({ [e.target.name]: e.target.value });
 
     addPoint = () => {
         const newPoint = {
@@ -145,166 +145,166 @@ class XYDataInput extends Component {
                 <div className="list" id="listDiv">
                     <table className="table">
                         <thead>
-                        <tr>
-                            {this.state.xEditMode === true ?
-                                <th className="valueWidth"><input ref={this.xInputRef} className="inputField"
-                                                                  autoFocus={true}
-                                                                  defaultValue={this.props.selections.xLabel}
-                                                                  onBlur={() => {
+                            <tr>
+                                {this.state.xEditMode === true ?
+                                    <th className="valueWidth"><input ref={this.xInputRef} className="inputField"
+                                        autoFocus={true}
+                                        defaultValue={this.props.selections.xLabel}
+                                        onBlur={() => {
 
-                                                                      this.props.setXLabel(this.xInputRef.current.value);
-
-
-                                                                      this.setState({
-                                                                          xEditMode: false
-                                                                      })
-                                                                  }
-                                                                  }
-                                /></th>
-                                :
-                                <th className="valueWidth"
-                                    onClick={() => {
-                                        this.setState({
-                                            xEditMode: true
-                                        })
-                                    }
-                                    }
-                                >{this.props.selections.xLabel}</th>
-                            }
-                            {this.state.yEditMode === true ?
-                                <th className="valueWidth"><input ref={this.yInputRef} className="inputField"
-                                                                  autoFocus={true}
-                                                                  defaultValue={this.props.selections.yLabel}
-                                                                  onBlur={() => {
-
-                                                                      this.props.setYLabel(this.yInputRef.current.value);
+                                            this.props.setXLabel(this.xInputRef.current.value);
 
 
-                                                                      this.setState({
-                                                                          yEditMode: false
-                                                                      })
-                                                                  }
-                                                                  }
-                                /></th>
-                                :
-                                <th className="valueWidth"
-                                    onClick={() => {
-                                        this.setState({
-                                            yEditMode: true
-                                        })
-                                    }
-                                    }
-                                >{this.props.selections.yLabel}</th>
-                            }
-                            <th>Akcje</th>
-                        </tr>
+                                            this.setState({
+                                                xEditMode: false
+                                            })
+                                        }
+                                        }
+                                    /></th>
+                                    :
+                                    <th className="valueWidth"
+                                        onClick={() => {
+                                            this.setState({
+                                                xEditMode: true
+                                            })
+                                        }
+                                        }
+                                    >{this.props.selections.xLabel}</th>
+                                }
+                                {this.state.yEditMode === true ?
+                                    <th className="valueWidth"><input ref={this.yInputRef} className="inputField"
+                                        autoFocus={true}
+                                        defaultValue={this.props.selections.yLabel}
+                                        onBlur={() => {
+
+                                            this.props.setYLabel(this.yInputRef.current.value);
+
+
+                                            this.setState({
+                                                yEditMode: false
+                                            })
+                                        }
+                                        }
+                                    /></th>
+                                    :
+                                    <th className="valueWidth"
+                                        onClick={() => {
+                                            this.setState({
+                                                yEditMode: true
+                                            })
+                                        }
+                                        }
+                                    >{this.props.selections.yLabel}</th>
+                                }
+                                <th>Akcje</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        {Object.values(this.props.points.points).map(point => (
-                            <tr key={uuid()}>
-                                {!this.state.editMode.includes(point.id) && (
-                                    <React.Fragment>
-                                        <td className="valueWidth">{point.x}</td>
-                                        <td className="valueWidth">{point.y}</td>
-                                    </React.Fragment>
-                                )}
-                                {this.state.editMode.includes(point.id) && (
-                                    <React.Fragment>
-                                        <td className="valueWidth">
-                                            <input
-                                                className="newValueInput text-center"
-                                                defaultValue={point.x}
-                                                id={"x_" + point.id}
-                                            />
-                                        </td>
-                                        <td className="valueWidth">
-                                            <input
-                                                className="newValueInput text-center"
-                                                defaultValue={point.y}
-                                                id={"y_" + point.id}
-                                            />
-                                        </td>
-                                    </React.Fragment>
-                                )}
-                                <td className="buttonsWidth">
-                                    {this.state.editMode.includes(point.id) ? (
-                                        <button
-                                            className="btn btn-success btn-small tableButton mx-3"
-                                            onClick={() => {
-                                                this.editModeTurnOff(point.id);
-                                            }}
-                                        >
-                                            Zapisz
-                                        </button>
-                                    ) : (
-                                        <button
-                                            className="btn btn-success btn-small tableButton mx-3"
-                                            onClick={() => {
-                                                this.editModeTurnOn(point.id);
-                                            }}
-                                        >
-                                            Edytuj
-                                        </button>
+                            {Object.values(this.props.points.points).map(point => (
+                                <tr key={uuid()}>
+                                    {!this.state.editMode.includes(point.id) && (
+                                        <React.Fragment>
+                                            <td className="valueWidth">{point.x}</td>
+                                            <td className="valueWidth">{point.y}</td>
+                                        </React.Fragment>
                                     )}
-                                    <button
-                                        className="btn btn-danger btn-small tableButton mx-3"
-                                        onClick={() => {
-                                            this.removePoint(point.id);
-                                        }}
-                                    >
-                                        Usuń
+                                    {this.state.editMode.includes(point.id) && (
+                                        <React.Fragment>
+                                            <td className="valueWidth">
+                                                <input
+                                                    className="newValueInput text-center"
+                                                    defaultValue={point.x}
+                                                    id={"x_" + point.id}
+                                                />
+                                            </td>
+                                            <td className="valueWidth">
+                                                <input
+                                                    className="newValueInput text-center"
+                                                    defaultValue={point.y}
+                                                    id={"y_" + point.id}
+                                                />
+                                            </td>
+                                        </React.Fragment>
+                                    )}
+                                    <td className="buttonsWidth">
+                                        {this.state.editMode.includes(point.id) ? (
+                                            <button
+                                                className="btn btn-success btn-small tableButton mx-3"
+                                                onClick={() => {
+                                                    this.editModeTurnOff(point.id);
+                                                }}
+                                            >
+                                                Zapisz
+                                        </button>
+                                        ) : (
+                                                <button
+                                                    className="btn btn-success btn-small tableButton mx-3"
+                                                    onClick={() => {
+                                                        this.editModeTurnOn(point.id);
+                                                    }}
+                                                >
+                                                    Edytuj
+                                        </button>
+                                            )}
+                                        <button
+                                            className="btn btn-danger btn-small tableButton mx-3"
+                                            onClick={() => {
+                                                this.removePoint(point.id);
+                                            }}
+                                        >
+                                            Usuń
                                     </button>
-                                </td>
-                            </tr>
-                        ))}
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
                 <table className="table">
                     <thead>
-                    <tr>
-                        <th/>
-                        <th/>
-                    </tr>
+                        <tr>
+                            <th />
+                            <th />
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>
-                            <input
-                                className="form-input text-center newValueInput"
-                                name="newX"
-                                id="newX"
-                                value={this.state.newX}
-                                onChange={this.onChange}
-                            />
-                        </td>
-                        <td>
-                            <input
-                                className="form-input text-center newValueInput"
-                                name="newY"
-                                id="newY"
-                                value={this.state.newY}
-                                onChange={this.onChange}
-                            />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colSpan="3">
-                            <button
-                                className="btn btn-primary btn-block btn-sm"
-                                onClick={this.addPoint}
-                            >
-                                Dodaj
+                        <tr>
+                            <td>
+                                <input
+                                    className="form-input text-center newValueInput"
+                                    name="newX"
+                                    id="newX"
+                                    value={this.state.newX}
+                                    onChange={this.onChange}
+                                />
+                            </td>
+                            <td>
+                                <input
+                                    className="form-input text-center newValueInput"
+                                    name="newY"
+                                    id="newY"
+                                    value={this.state.newY}
+                                    onChange={this.onChange}
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan="3">
+                                <button
+                                    className="btn btn-primary btn-block btn-sm"
+                                    onClick={this.addPoint}
+                                >
+                                    Dodaj
                             </button>
-                        </td>
-                    </tr>
-                    {this.props.selections.helpVisible &&
-                    <tr>
-                        <td colSpan="3">
-                            <span className="text-muted">Przy tej wybranej rodzinie wykresów obie wprowadzane wartości muszą być wartościami numerycznymi</span>
-                        </td>
-                    </tr>
-                    }
+                            </td>
+                        </tr>
+                        {this.props.selections.helpVisible &&
+                            <tr>
+                                <td colSpan="3">
+                                    <span className="text-muted">Przy tej wybranej rodzinie wykresów obie wprowadzane wartości muszą być wartościami numerycznymi</span>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
                 <h6 className="text-danger"> {this.state.errorMessage} </h6>
