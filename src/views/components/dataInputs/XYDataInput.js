@@ -28,6 +28,7 @@ class XYDataInput extends Component {
         this.yInputRef = React.createRef();
 
 
+
         this.state = {
             points: [],
             newX: "",
@@ -77,11 +78,13 @@ class XYDataInput extends Component {
 
 
             this.props.addPoint(newPoint);
+
             this.setState({
                 errorMessage: "",
                 newX: "",
                 newY: ""
             });
+
 
             $("#listDiv").scrollTop($("#listDiv")[0].scrollHeight);
         } else {
@@ -314,8 +317,8 @@ class XYDataInput extends Component {
 }
 
 const mapStateToProps = state => ({
-    points: state.XandYPoints.points,
-    selections: state.Selections.selections
+    points: state.present.XandYPoints.present.points,
+    selections: state.present.Selections.present.selections
 });
 
 export default connect(

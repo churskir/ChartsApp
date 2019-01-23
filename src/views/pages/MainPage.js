@@ -248,9 +248,9 @@ class MainPage extends Component {
 }
 
 const mapStateToProps = state => ({
-    xypoints: state.XandYPoints.points,
-    nvpoints: state.NameAndValuePoints.points,
-    selections: state.Selections.selections
+    xypoints: state.present.XandYPoints.present.points,
+    nvpoints: state.present.NameAndValuePoints.present.points,
+    selections: state.present.Selections.present.selections
 
 });
 

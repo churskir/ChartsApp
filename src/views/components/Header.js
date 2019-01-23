@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { CSVLink } from "react-csv";
 import { connect } from "react-redux";
-import CSVReader from 'react-csv-reader'
+import CSVReader from 'react-csv-reader';
+import { ActionCreators } from 'redux-undo';
+import store from '../../store';
+
 
 import {
     addPoint as addXYPoint,
@@ -193,6 +196,16 @@ class Header extends Component {
                                     </a>
                                     </li>
                                 }
+                                <li className="nav-item active">
+                                    <a className="nav-link" href="#"
+                                       onClick={() => {
+                                               store.dispatch(ActionCreators.undo()); // undo the last action
+                                           }
+                                       }
+                                    >
+                                        Cofnij
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -204,9 +217,9 @@ class Header extends Component {
 
 
 const mapStateToProps = state => ({
-    xypoints: state.XandYPoints.points,
-    nvpoints: state.NameAndValuePoints.points,
-    selections: state.Selections.selections
+    xypoints: state.present.XandYPoints.present.points,
+    nvpoints: state.present.NameAndValuePoints.present.points,
+    selections: state.present.Selections.present.selections
 
 });
 

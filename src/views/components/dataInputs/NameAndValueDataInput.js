@@ -294,8 +294,8 @@ class NameAndValueDataInput extends Component {
 }
 
 const mapStateToProps = state => ({
-    points: state.NameAndValuePoints.points,
-    selections: state.Selections.selections
+    points: state.present.NameAndValuePoints.present.points,
+    selections: state.present.Selections.present.selections
 });
 
 export default connect(

@@ -13,12 +13,13 @@
     "react-redux": "^5.1.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
+    "react-scripts": "^2.1.1",
+    "reactcss": "latest",
     "recharts": "^1.4.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "uuid": "^3.3.2",
-    "reactcss": "latest"
+    "redux-undo": "^1.0.0-beta9-9-7",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "deploy": "npm run build&&gh-pages -d build",
